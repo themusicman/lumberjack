@@ -2,7 +2,9 @@
 A logging plugin for Blocks CMS.
 
 ##Installation
-Put the plugins/lumberjack folder in the blocks/plugins folder of the site.  Login and go to the Settings > Plugins screen and click "Install." Enjoy.
+1. Put the plugins/lumberjack folder in the blocks/plugins folder of the site.  
+2. Login and go to the Settings > Plugins screen and click "Install." 
+3. Cue the [music](http://youtu.be/5zey8567bcg "music")
 
 ##Usage
 
