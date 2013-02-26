@@ -1,0 +1,30 @@
+#log-entries_wrapper {
+    position: relative;
+}
+#log-entries_processing {
+    float: left;
+    margin-left: 10px;
+}
+#log-entries_length {
+    float: left;
+}
+#log-entries_filter {
+    float: right;
+}
+#log-entries {
+    clear: both;
+    position: relative;
+    top: 10px;
+}
+#log-entries_info {
+    position: relative;
+    top: 20px;
+    width: 50%;
+}
+#log-entries_paginate {
+    float: right;
+}
+#log-entries_paginate a {
+    color: #555;
+    margin-left: 5px;
+}

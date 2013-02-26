@@ -22,59 +22,6 @@
 
 {% endset %}
 
-
-
-{# Move this stuff to external files #}
 {% includeJsResource "lumberjack/jquery.dataTables.min.js" %}
-{% set css %}
-#log-entries_wrapper {
-    position: relative;
-}
-#log-entries_processing {
-    float: left;
-    margin-left: 10px;
-}
-#log-entries_length {
-    float: left;
-}
-#log-entries_filter {
-    float: right;
-}
-#log-entries {
-    clear: both;
-    position: relative;
-    top: 10px;
-}
-#log-entries_info {
-    position: relative;
-    top: 20px;
-    width: 50%;
-}
-#log-entries_paginate {
-    float: right;
-}
-#log-entries_paginate a {
-    color: #555;
-    margin-left: 5px;
-}
-{% endset %}
-{% includeCss css %}
-{% set js %}
-    jQuery(function() {
-        jQuery('#log-entries').dataTable({
-            "bPaginate": true,
-            "bProcessing": true,
-            "bServerSide": true,
-            "sAjaxSource": Blocks.getActionUrl('lumberjack/logs/tableData'),
-            "aoColumns": [
-    			{ "sName": "id" },
-    			{ "sName": "plugin_name" },
-    			{ "sName": "level" },
-    			{ "sName": "message" },
-    			{ "sName": "meta" },
-    			{ "sName": "dateCreated" }
-    		]
-        });
-    });
-{% endset %}
-{% includeJs js %}
+{% includeJsResource "lumberjack/log_entries.js" %}
+{% includeCssResource "lumberjack/log_entries.css" %}
