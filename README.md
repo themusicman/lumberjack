@@ -27,8 +27,11 @@ Example usage in template:
 
     {% set logEntrySaved = blx.lumberjack.log({plugin_name: "LumberJack", level: 'debug', message: 'This is a test...', meta: {username: 'me', first_name: 'Thomas'}}) %}
     
+##Widget
+
+The plugin comes with a basic widget that will list basic info about the last 5 log entries. To install click on the gear icon next to the "Dashboard" header and then click "New Widget." Select the "LumberJack Log" widget type and click "Save."
+
 
 ##Todo
-1. Move CSS and JS out of index.html file to external files
 2. Improve column spacing and style of log viewer table.
 3. Add notifiers (email/webhook/hipchat)
