@@ -1,0 +1,29 @@
+{% set logEntries = blx.lumberJack.getAllLogEntries({limit: 5}) %}
+  
+{%if logEntries %}
+    <table class="data">
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>Message</th>
+                <th>DateTime</th>
+            </tr>
+        </thead
+        <tbody>
+            {% for entry in logEntries %}
+                <tr>
+                    <td>{{ entry.level }}</td>
+                    <td>{{ entry.message }}</td>
+                    <td>{{ entry.dateCreated }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <p><a href="/admin/lumberjack">View All</a></p>
+    
+{% else %}
+    <p>Sorry, no log entries exist yet.</p>
+{% endif %}
+
+    

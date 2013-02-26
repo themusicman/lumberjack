@@ -32,9 +32,22 @@ class LumberJackService extends BaseApplicationComponent
      * @return array
      * 
      **/
-    public function getAllLogEntries() 
-    {
+    public function getAllLogEntries($params = array()) 
+    {        
+        $dbCriteria = array(
+            'order' => 'dateCreated DESC',
+        );
+        
+        $limit = Arr::get($params, 'limit');
+        if ($limit !== null)
+        {
+            $dbCriteria['limit'] = $limit;
+        }
+        
+        $this->logEntryRecord->getDbCriteria()->mergeWith($dbCriteria);
+        
         $records = $this->logEntryRecord->findAll();
+        
         return LumberJack_LogEntryModel::populateModels($records, 'id');
     }
     

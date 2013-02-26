@@ -12,9 +12,9 @@ class LumberJackVariable
      *
      * @return array
      */
-    public function getAllLogEntries()
+    public function getAllLogEntries($params = array())
     {
-        return blx()->lumberJack->getAllLogEntries();
+        return blx()->lumberJack->getAllLogEntries($params);
     }
     
     /**
