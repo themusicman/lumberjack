@@ -1,6 +1,6 @@
 <?php
 
-namespace Blocks;
+namespace Craft;
 
 
 
@@ -83,7 +83,7 @@ class LumberJackService extends BaseApplicationComponent
         $offset = (int) Arr::get($params, 'start', 0);
         $limit = (int) Arr::get($params, 'limit', 10);
         
-        $query = blx()->db->createCommand()->from('lumberjack_log_entries');
+        $query = craft()->db->createCommand()->from('lumberjack_log_entries');
             
         if ($q = Arr::get($params, 'q'))
         {
@@ -120,7 +120,7 @@ class LumberJackService extends BaseApplicationComponent
         $logEntrySaved = $this->saveLogEntry($model);
         if ($logEntrySaved) 
         {
-            blx()->plugins->callHook('lumberJackLogEntrySaved', array($model));
+            craft()->plugins->callHook('lumberJackLogEntrySaved', array($model));
         }
         return $logEntrySaved;
     }
@@ -153,7 +153,7 @@ class LumberJackService extends BaseApplicationComponent
             $record = $this->logEntryRecord->findByPk($id);
             if ($record === null) 
             {
-                throw new Exception(Blocks::t('Can\'t find log entry with ID "{id}"', array('id' => $id)));
+                throw new Exception(Craft::t('Can\'t find log entry with ID "{id}"', array('id' => $id)));
             }
         } 
         else 

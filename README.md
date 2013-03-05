@@ -1,5 +1,5 @@
 #LumberJack
-A logging plugin for Blocks CMS.
+A logging plugin for Craft CMS.
 
 ##Installation
 1. Put the plugins/lumberjack folder in the blocks/plugins folder of the site.  
@@ -11,11 +11,11 @@ A logging plugin for Blocks CMS.
 Example usage in code:
 
     //first check to see if it is installed and enabled. then make the call to log
-    if (($lumberJack = blx()->plugins->getPlugin('LumberJack')) && $lumberJack->isInstalled && $lumberJack->isEnabled)
+    if (($lumberJack = craft()->plugins->getPlugin('LumberJack')) && $lumberJack->isInstalled && $lumberJack->isEnabled)
     {
         $params = array(...);
         
-        blx()->lumberJack->log(array(
+        craft()->lumberJack->log(array(
             'plugin_name'       => 'LumberJack',
             'level'             => LumberJack_LogEntryModel::INFO,
             'message'           => 'Datatable query was executed',
@@ -25,7 +25,7 @@ Example usage in code:
     
 Example usage in template:
 
-    {% set logEntrySaved = blx.lumberjack.log({plugin_name: "LumberJack", level: 'debug', message: 'This is a test...', meta: {username: 'me', first_name: 'Thomas'}}) %}
+    {% set logEntrySaved = craft.lumberjack.log({plugin_name: "LumberJack", level: 'debug', message: 'This is a test...', meta: {username: 'me', first_name: 'Thomas'}}) %}
     
 ##Widget
 

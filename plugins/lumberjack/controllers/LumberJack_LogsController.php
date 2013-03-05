@@ -1,6 +1,6 @@
 <?php
 
-namespace Blocks;
+namespace Craft;
 
 /**
  *
@@ -11,21 +11,21 @@ class LumberJack_LogsController extends BaseController
     public function actionTableData() 
     {        
         
-        $columns = array_filter(explode(',', blx()->request->getParam('sColumns', '')));
+        $columns = array_filter(explode(',', craft()->request->getParam('sColumns', '')));
         
         $params = array(
-            'start'         => blx()->request->getParam('iDisplayStart', 0),
-            'limit'         => blx()->request->getParam('iDisplayLength', 10),
-            'q'             => blx()->request->getParam('sSearch'),
+            'start'         => craft()->request->getParam('iDisplayStart', 0),
+            'limit'         => craft()->request->getParam('iDisplayLength', 10),
+            'q'             => craft()->request->getParam('sSearch'),
             'columns'       => $columns,
-            'sortByIndex'   => blx()->request->getParam('iSortCol_0', 0),
-            'sortDir'       => blx()->request->getParam('sSortDir_0', 'asc'),
+            'sortByIndex'   => craft()->request->getParam('iSortCol_0', 0),
+            'sortDir'       => craft()->request->getParam('sSortDir_0', 'asc'),
         );
         
         //lets log are query
-        // if (($lumberJack = blx()->plugins->getPlugin('LumberJack')) && $lumberJack->isInstalled && $lumberJack->isEnabled)
+        // if (($lumberJack = craft()->plugins->getPlugin('LumberJack')) && $lumberJack->isInstalled && $lumberJack->isEnabled)
         // {
-        //     blx()->lumberJack->log(array(
+        //     craft()->lumberJack->log(array(
         //         'plugin_name'       => 'LumberJack',
         //         'level'             => LumberJack_LogEntryModel::INFO,
         //         'message'           => 'Datatable query was executed',
@@ -33,13 +33,13 @@ class LumberJack_LogsController extends BaseController
         //     ));
         // }
         
-        $data = blx()->lumberJack->searchLogEntries($params); 
+        $data = craft()->lumberJack->searchLogEntries($params); 
           
         $count = Arr::get($data, 'count');
         $records = Arr::get($data, 'records', array());
             
         $output = array(
-            "sEcho"                 => blx()->request->getParam('sEcho'),
+            "sEcho"                 => craft()->request->getParam('sEcho'),
             "iTotalRecords"         => $count,
             "iTotalDisplayRecords"  => $count,
             "aaData"                => array()

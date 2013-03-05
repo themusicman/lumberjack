@@ -1,6 +1,6 @@
 <?php
 
-namespace Blocks;
+namespace Craft;
 
 class LumberJackPlugin extends BasePlugin
 {
@@ -10,7 +10,7 @@ class LumberJackPlugin extends BasePlugin
        
     public function getName()
     {
-        return Blocks::t('LumberJack');
+        return Craft::t('LumberJack');
     }
 
     public function getVersion()

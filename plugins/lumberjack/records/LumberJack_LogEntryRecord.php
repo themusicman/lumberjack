@@ -1,5 +1,5 @@
 <?php
-namespace Blocks;
+namespace Craft;
 
 class LumberJack_LogEntryRecord extends BaseRecord
 {

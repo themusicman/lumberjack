@@ -1,6 +1,6 @@
 <?php
 
-namespace Blocks;
+namespace Craft;
 
 /**
  * LumberJack Variable provides access to database objects from templates
@@ -14,7 +14,7 @@ class LumberJackVariable
      */
     public function getAllLogEntries($params = array())
     {
-        return blx()->lumberJack->getAllLogEntries($params);
+        return craft()->lumberJack->getAllLogEntries($params);
     }
     
     /**
@@ -27,7 +27,7 @@ class LumberJackVariable
      **/
     public function log($attributes = array()) 
     {
-        return blx()->lumberJack->log($attributes);
+        return craft()->lumberJack->log($attributes);
     }
 
 }

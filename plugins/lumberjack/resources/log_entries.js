@@ -3,7 +3,7 @@ jQuery(function() {
         "bPaginate": true,
         "bProcessing": true,
         "bServerSide": true,
-        "sAjaxSource": Blocks.getActionUrl('lumberjack/logs/tableData'),
+        "sAjaxSource": Craft.getActionUrl('lumberjack/logs/tableData'),
         "aoColumns": [
     			{ "sName": "id" },
     			{ "sName": "plugin_name" },

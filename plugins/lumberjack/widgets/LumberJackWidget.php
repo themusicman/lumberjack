@@ -1,5 +1,5 @@
 <?php
-namespace Blocks;
+namespace Craft;
 
 /**
  * Blocks by Pixel & Tonic
@@ -23,7 +23,7 @@ class LumberJackWidget extends BaseWidget
 	 */
 	public function getName()
 	{
-		return Blocks::t('LumberJack Log');
+		return Craft::t('LumberJack Log');
 	}
 
 	/**
@@ -33,6 +33,6 @@ class LumberJackWidget extends BaseWidget
 	 */
 	public function getBodyHtml()
 	{
-	    return blx()->templates->render('lumberjack/_widget');
+	    return craft()->templates->render('lumberjack/_widget');
 	}
 }
