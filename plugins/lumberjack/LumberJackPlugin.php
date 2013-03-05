@@ -50,13 +50,13 @@ class LumberJackPlugin extends BasePlugin
     /**
      * Add default ingredients after plugin is installed
      */
-    public function onAfterInstall()
-    {
-        
-    }
+    // public function onAfterInstall()
+    // {
+    //     
+    // }
 }
 
-if (!class_exists("Blocks\\Arr"))
+if (!class_exists("Craft\\Arr"))
 {
     /**
      * Array helper.
